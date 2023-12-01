@@ -15,5 +15,5 @@ set(CMAKE_CXX_FLAGS "-Wall -std=c++14 -pthread -lprotobuf -DEPOLL")
 set(CMAKE_CXX_FLAGS_DEBUG "-D_DEBUG -O0 -ggdb")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG")
 
-
-aux_source_directory(. SRCS)
+aux_source_directory(. SRC)
+add_library(${MyProjectName} STATIC ${SRC})
