@@ -9,10 +9,13 @@ class IDynamicObjectPool;
 class IComponent : virtual public SnObject
 {
 public:
+    ///@brief 依赖实体管理系统
     friend class EntitySystem;
 
+    ///@brief 自定义析构函数
     virtual ~IComponent() = default;
 
+    ///@brief 设置动态对象池依赖,对象从对象池中取出
     void SetPool(IDynamicObjectPool *pPool);
     void SetParent(IEntity *pObj);
     void SetEntitySystem(EntitySystem *pSys);
@@ -23,7 +26,7 @@ public:
     T *GetParent();
   
     static EntitySystem *GetGlobalEntitySystem();
-    EntitySystem *GetEntitySystem() const;
+    static EntitySystem *GetEntitySystem() ;
     virtual void BackToPool() = 0;
     virtual void ComponentBackToPool();
 
