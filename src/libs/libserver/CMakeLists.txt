@@ -16,4 +16,4 @@ set(CMAKE_CXX_FLAGS_DEBUG "-D_DEBUG -O0 -ggdb")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG")
 
 aux_source_directory(. SRC)
-add_library(${MyProjectName} STATIC ${SRC})
+add_library(${MyProjectName} STATIC ${SRC} "common.h" "disposable.h" "global.h" "singleton.h" "sn_object.h" "util_string.h" "util_time.h" "protobuf/msg.pb.h" "protobuf/msg.pb.cc" "protobuf/proto_id.pb.h" "protobuf/proto_id.pb.cc" "base_buffer.cpp" "base_buffer.h" "cache_refresh.h" "cache_swap.h"  "component.h" "component_factory.h" "entity.cpp" "entity.h" "entity_system.cpp" "entity_system.h" "object_pool.h" "object_pool_interface.h" "object_pool_mgr.cpp" "object_pool_mgr.h" "regis_to_factory.h" "system.h")

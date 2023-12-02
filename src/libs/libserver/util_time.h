@@ -12,7 +12,7 @@ namespace timeutil
 
 	inline Time AddSeconds(Time timeValue, int second)
 	{
-		return timeValue + second * 1000;
+		return timeValue + static_cast<unsigned long long>(second) * 1000;
 	}
 
 	inline Time AddMilliseconds(Time timeValue, int milliseconds)
