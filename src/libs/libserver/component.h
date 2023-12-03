@@ -26,7 +26,7 @@ public:
     T *GetParent();
   
     static EntitySystem *GetGlobalEntitySystem();
-    static EntitySystem *GetEntitySystem() ;
+    EntitySystem *GetEntitySystem() const;
     virtual void BackToPool() = 0;
     virtual void ComponentBackToPool();
 
