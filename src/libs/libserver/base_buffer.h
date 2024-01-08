@@ -1,13 +1,10 @@
 #pragma once
 
-// ×·¼Ó´óÐ¡
 #if TestNetwork
 #define ADDITIONAL_SIZE 10
 #else
 #define ADDITIONAL_SIZE 1024 * 128
 #endif
-
-// ×î´ó»º³å
 #define MAX_SIZE		1024 * 1024 // 1M
 
 class Buffer
@@ -32,9 +29,9 @@ public:
 
 protected:
 	char* _buffer{ nullptr };
-	unsigned int _beginIndex{ 0 }; // bufferÊý¾Ý ¿ªÊ¼Î»Óë½áÊøÎ»
+	unsigned int _beginIndex{ 0 }; // bufferï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ê¼Î»ï¿½ï¿½ï¿½ï¿½ï¿½Î»
 	unsigned int _endIndex{ 0 };
 
-	unsigned int _bufferSize{ 0 }; // ×Ü³¤¶È
+	unsigned int _bufferSize{ 0 }; // ï¿½Ü³ï¿½ï¿½ï¿½
 };
 

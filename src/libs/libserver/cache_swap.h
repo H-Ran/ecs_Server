@@ -6,12 +6,7 @@ template <class T>
 class CacheSwap
 {
 public:
-    CacheSwap()
-    {
-        _writerCache = &_caches1;
-        _readerCache = &_caches2;
-    }
-
+    CacheSwap();
     std::list<T *> *GetWriterCache();
     std::list<T *> *GetReaderCache();
     void Swap();
@@ -21,10 +16,16 @@ public:
 private:
     std::list<T *> _caches1;
     std::list<T *> _caches2;
-
     std::list<T *> *_readerCache;
     std::list<T *> *_writerCache;
 };
+
+template <class T>
+CacheSwap<T>::CacheSwap()
+{
+    _writerCache = &_caches1;
+    _readerCache = &_caches2;
+}
 
 template <class T>
 inline std::list<T *> *CacheSwap<T>::GetWriterCache()

@@ -25,7 +25,6 @@ public:
 
     void Update() override;
     void FreeObject(IComponent *pObj) override;
-
     void Show();
 
 private:
@@ -54,6 +53,7 @@ DynamicObjectPool<T> *DynamicObjectPool<T>::GetInstance()
     if (_pInstance == nullptr)
     {
         _pInstance = new DynamicObjectPool<T>();
+        // 将动态对象池添加到对象池管理系统
         DynamicObjectPoolMgr::GetInstance()->AddPool(_pInstance);
     }
 

@@ -8,7 +8,9 @@ protected:
 public:
     virtual ~ISystem() = default;
 };
-
+/***
+ * 初始化系统
+ */
 class IInitializeSystem : virtual public ISystem
 {
 protected:
@@ -19,7 +21,9 @@ public:
 
     virtual void Initialize() = 0;
 };
-
+/***
+ * 更新系统组件
+ */
 class IUpdateSystem : virtual public ISystem
 {
 protected:
