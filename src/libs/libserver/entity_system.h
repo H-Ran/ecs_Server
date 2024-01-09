@@ -58,7 +58,7 @@ protected:
 private:
     std::list<IUpdateSystem *> _updateSystems;
     std::list<IMessageSystem *> _messageSystems;
-    std::map<uint64, IComponent *> _objSystems; // 所有对象
+    std::map<uint64, IComponent *> _objSystems; // 所有组件对象
     std::mutex _packet_lock; // 本线程所有的待处理包
     CacheSwap<Packet> _cachePackets;
 };

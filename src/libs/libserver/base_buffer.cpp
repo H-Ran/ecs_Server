@@ -9,7 +9,6 @@ unsigned Buffer::GetEmptySize()
 
 void Buffer::ReAllocBuffer(const unsigned int dataLength)
 {
-	// 如果缓冲区超过最大缓冲值，发出警告
 	if (_bufferSize >= MAX_SIZE) {
 		std::cout << "Buffer::Realloc except!! Max size:" << _bufferSize << std::endl;
 	}
@@ -29,11 +28,10 @@ void Buffer::ReAllocBuffer(const unsigned int dataLength)
 		}
 		else 
 		{
-			// 1.先COPY尾部
 			::memcpy(tempBuffer, _buffer + _beginIndex, _bufferSize - _beginIndex);
 			_newEndIndex = _bufferSize - _beginIndex;
 
-			// 2.再COPY头部
+
 			if (_endIndex > 0)
 			{
 				::memcpy(tempBuffer + _newEndIndex, _buffer, _endIndex);
@@ -42,7 +40,6 @@ void Buffer::ReAllocBuffer(const unsigned int dataLength)
 		}
 	}
 
-	// 修改数据
 	_bufferSize += ADDITIONAL_SIZE;
 
 	delete[] _buffer;
